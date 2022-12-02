@@ -15,4 +15,7 @@ for comida in dados:
         elfo += 1
         calorias = 0
 
-print(maior)
+resultado = list(mapa_da_soma_de_calorias_dos_elfos.values())
+resultado.sort()
+
+print(resultado[-1] + resultado[-2] + resultado[-3])
