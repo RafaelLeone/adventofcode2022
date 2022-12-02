@@ -10,8 +10,6 @@ for comida in dados:
         calorias += int(comida)
     else:
         mapa_da_soma_de_calorias_dos_elfos[elfo] = calorias
-        if mapa_da_soma_de_calorias_dos_elfos[elfo] > maior:
-            maior = mapa_da_soma_de_calorias_dos_elfos[elfo]
         elfo += 1
         calorias = 0
 
