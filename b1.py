@@ -11,5 +11,5 @@ sistema = {
 
 for rodada in dados:
     pontuacao += sistema[rodada]
-
+    
 print(pontuacao)
