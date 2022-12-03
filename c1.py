@@ -13,17 +13,12 @@ for char in range(26):
     c = char + 65
     dict[char+27] = chr(c)
 dict = {value:key for key, value in dict.items()}
-#Dividindo compartimentos:
-for mochila in dados:
-    divisao = int(len(mochila)/2)
-    compartimento1.append(mochila[:divisao])
-    compartimento2.append(mochila[divisao:])
 
-while contador < len(compartimento1):
-    for letra in compartimento1[contador]:
-        if letra in compartimento2[contador]:
+while contador < len(dados)-2:
+    for letra in dados[contador]:
+        if letra in dados[contador+1] and letra in dados[contador+2]:
             soma += dict[letra]
             break
-    contador += 1
+    contador += 3
 
 print(soma)
