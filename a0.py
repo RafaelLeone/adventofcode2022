@@ -3,7 +3,6 @@ with open("./a-dados") as f:
 mapa_da_soma_de_calorias_dos_elfos = {}
 elfo = 0
 calorias = 0
-maior = 0
 
 for comida in dados:
     if comida not in ['\n', '\r', '\r\n']:
@@ -13,7 +12,6 @@ for comida in dados:
         elfo += 1
         calorias = 0
 
-resultado = list(mapa_da_soma_de_calorias_dos_elfos.values())
-resultado.sort()
+maior = max(mapa_da_soma_de_calorias_dos_elfos.values())
 
-print(resultado[-1] + resultado[-2] + resultado[-3])
+print(maior)
