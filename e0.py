@@ -28,18 +28,16 @@ while linha < numero_da_ultima_pilha:
 #Listas de movimentos:
 linha +=1
 lista_de_movimentos = []
-print(linha)
 while linha < len(dados):
     lista_de_movimentos.append([])
     lista_de_movimentos[linha-10] = [int(s) for s in re.findall(r'\d+', dados[linha])]
     linha += 1
 #Solução:
-caixas_a_mover = []
 for comandos in lista_de_movimentos:
     for i in range(comandos[0]):
         matriz[comandos[2]-1].reverse()
         matriz[comandos[2]-1].append(matriz[comandos[1]-1][0])
         matriz[comandos[2]-1].reverse()
         matriz[comandos[1]-1].pop(0)
-    break
-print(matriz[0], matriz[6])
+for lista in matriz:
+    print(lista[0], end='')
