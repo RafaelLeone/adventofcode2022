@@ -6,7 +6,7 @@ tabela = []
 matriz = []
 contador = 0
 numero_atual = 0
-#Tabela de caixas:
+#Matriz de caixas:
 while linha < len(dados):
     if dados[linha][1] == '1':
         numero_da_ultima_pilha = int(dados[linha][-2])
@@ -21,6 +21,7 @@ while numero_atual < numero_da_ultima_pilha:
         if tabela[contador] != ' ':
             matriz[numero_atual].append(tabela[contador])
         contador += numero_da_ultima_pilha
+    matriz[numero_atual].reverse()
     numero_atual += 1
     contador = numero_da_ultima_pilha - (numero_da_ultima_pilha - numero_atual)
 
