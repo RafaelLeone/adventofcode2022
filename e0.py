@@ -23,7 +23,6 @@ while linha < numero_da_ultima_pilha:
         if tabela[contador] != ' ':
             matriz[linha].append(tabela[contador])
         contador += numero_da_ultima_pilha
-    matriz[linha].reverse()
     linha += 1
     contador = numero_da_ultima_pilha - (numero_da_ultima_pilha - linha)
 #Listas de movimentos:
@@ -34,5 +33,13 @@ while linha < len(dados):
     lista_de_movimentos.append([])
     lista_de_movimentos[linha-10] = [int(s) for s in re.findall(r'\d+', dados[linha])]
     linha += 1
-
-print(lista_de_movimentos)
+#Solução:
+caixas_a_mover = []
+for comandos in lista_de_movimentos:
+    for i in range(comandos[0]):
+        matriz[comandos[2]-1].reverse()
+        matriz[comandos[2]-1].append(matriz[comandos[1]-1][0])
+        matriz[comandos[2]-1].reverse()
+        matriz[comandos[1]-1].pop(0)
+    break
+print(matriz[0], matriz[6])
