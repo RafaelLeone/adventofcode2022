@@ -7,7 +7,6 @@ for contador in range(len(string)-3):
     lista = [letra for letra in conjunto_de_quatro_letras]
     alvo = [lista.count(letra) for letra in lista]
     if alvo == [1, 1, 1, 1]:
-        certo = conjunto_de_quatro_letras
         break
     contador += 1
 #Tem +3 por ser a última posição e +1 por começar do zero pelo código.
