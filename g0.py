@@ -42,10 +42,11 @@ for dado in dados:
             except:
                 break
 
+print(dict)
 #Agora pegar pastas que não tem pastas dentro e somar seu valor final.
 
 novo_dict = {}
-while dict['0/'] == ['150555', '276291', '1csmqbhjv', '1czdqfr', '1fpfwfzrt', '192660', '142026', '1sqphfslv', '38077']:
+while dict['0/'] == ['150555', '276291', '1csmqbhjv', '1czdqfr', '1fpfwfzrt', '192660', '142026', '1sqphfslv', '38077'] or dict['0/'] == ['150555', '276291', '1csmqbhjv', '1czdqfr', '192660', '142026', '1sqphfslv', '38077', 534049] or dict['0/'] == ['150555', '276291', '1csmqbhjv', '192660', '142026', '1sqphfslv', '38077', 534049, 992049]:
     for pasta, lista in dict.items():
         soma = 0
         contador_de_errado = 0
@@ -64,3 +65,5 @@ while dict['0/'] == ['150555', '276291', '1csmqbhjv', '1czdqfr', '1fpfwfzrt', '1
                 dict[pasta] = lista
 print(dict)
 print(novo_dict)
+
+['150555', '276291', '1csmqbhjv', '1czdqfr', '192660', '142026', '1sqphfslv', '38077', 534049]
