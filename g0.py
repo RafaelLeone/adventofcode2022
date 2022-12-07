@@ -3,11 +3,10 @@ with open("./g-dados") as f:
 nivel = 0
 pastas = { '/': [], }
 linha = -1
-quais_pastas_tem_em_quais_niveis = { 0: ['/',] }
+nivel_x_pastas = { 0: ['/',], }
 
 for dado in dados:
     dado = dado.split(' ')
-    print(dado)
     if dado[0] == '$': # Comandos
         if dado[1] == 'cd':
             if dado[2] == '/':
@@ -16,12 +15,14 @@ for dado in dados:
                 nivel -= 1
             else:
                 nivel += 1
-                quais_pastas_tem_em_quais_niveis[nivel] = []
+                nivel_x_pastas[nivel] = []
+
+nivel_mais_baixo = list(nivel_x_pastas.keys())
+nivel_mais_baixo = nivel_mais_baixo[-1]
 
 for dado in dados:
     linha += 1
     dado = dado.split(' ')
-    print(dado)
     if dado[0] == '$': # Comandos
         if dado[1] == 'cd':
             if dado[2] == '/':
@@ -37,7 +38,7 @@ for dado in dados:
                     x = dados[linha+1].split(' ')
                     if x[0] == 'dir':
                         linha += 1
-                        quais_pastas_tem_em_quais_niveis[nivel].append(x[1])
+                        nivel_x_pastas[nivel].append(x[1])
                     else:
                         linha += 1
                         continue
@@ -47,4 +48,5 @@ for dado in dados:
     else:
         continue
 
-print(quais_pastas_tem_em_quais_niveis)
+print(nivel_mais_baixo)
+print(nivel_x_pastas)
