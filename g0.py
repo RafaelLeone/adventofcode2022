@@ -1,3 +1,6 @@
+from operator import index
+
+
 with open("./g-dados") as f:
     dados = [l.strip('\n\r') for l in f]
 
@@ -38,9 +41,9 @@ for dado in dados:
                     continue
             except:
                 break
-print(dict)
 
 #Agora pegar pastas que não tem pastas dentro e somar seu valor final.
+teste = 0
 
 novo_dict = {}
 for pasta, lista in dict.items():
@@ -56,5 +59,9 @@ for pasta, lista in dict.items():
 for pasta, lista in dict.items():
     for arquivo in lista:
         if arquivo in novo_dict:
-            print('oi')
+            lista.pop(lista.index(arquivo))
+            lista.append(novo_dict[arquivo])
+            dict[pasta] = lista
+print(dict)
 print(novo_dict)
+print(teste)
