@@ -39,7 +39,7 @@ print(dict)
 #Agora pegar pastas que não tem pastas dentro e somar seu valor final.
 
 novo_dict = {}
-for lista in dict.values():
+for pasta, lista in dict.items():
     soma = 0
     contador_de_errado = 0
     for arquivo in lista:
@@ -50,4 +50,6 @@ for lista in dict.values():
         else:
             soma += int(teste[0])
     if contador_de_errado == 0:
-        novo_dict[0] = soma #trocar o zero pelo nome de cada pasta
+        novo_dict[pasta] = soma #trocar o zero pelo nome de cada pasta
+
+print(novo_dict)
