@@ -66,4 +66,9 @@ while dict['0/'] == ['150555', '276291', '1csmqbhjv', '1czdqfr', '1fpfwfzrt', '1
 print(dict)
 print(novo_dict)
 
-['150555', '276291', '1csmqbhjv', '1czdqfr', '192660', '142026', '1sqphfslv', '38077', 534049]
+contador_final = 0
+for tamanho in novo_dict.values():
+    if tamanho <= 100000:
+        contador_final += 1
+
+print(contador_final)
