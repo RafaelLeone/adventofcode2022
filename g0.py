@@ -25,7 +25,11 @@ for dado in dados:
             lista = []
             try:
                 while dados[linha+1][0] != '$':
-                    lista.append(dados[linha+1])
+                    hhh = dados[linha+1].split(' ')
+                    if hhh[0] == 'dir':
+                        lista.append(str(nivel)+hhh[1])
+                    else:
+                        lista.append(hhh[0])
                     linha += 1
                 else:
                     linha = linha_antiga
@@ -43,13 +47,14 @@ for pasta, lista in dict.items():
     soma = 0
     contador_de_errado = 0
     for arquivo in lista:
-        teste = arquivo.split(' ')
-        if teste[0] == 'dir':
+        try:
+            soma += int(arquivo)
+        except:
             contador_de_errado += 1
-            break
-        else:
-            soma += int(teste[0])
     if contador_de_errado == 0:
-        novo_dict[pasta] = soma #trocar o zero pelo nome de cada pasta
-
+        novo_dict[pasta] = soma
+for pasta, lista in dict.items():
+    for arquivo in lista:
+        if arquivo in novo_dict:
+            print('oi')
 print(novo_dict)
